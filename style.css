@@ -1,4 +1,4 @@
-/* General Styling */
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -25,7 +25,6 @@ body {
   }
 }
 
-/* Start Screen */
 #start-screen {
   position: absolute;
   width: 100%;
@@ -46,13 +45,6 @@ body {
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(255, 0, 0, 0.8);
-  transition: background 0.3s, box-shadow 0.3s;
-}
-
-#start-button:hover {
-  background: darkred;
-  box-shadow: 0 6px 12px rgba(255, 0, 0, 0.8);
 }
 
 #countdown {
@@ -69,7 +61,6 @@ body {
   transition: opacity 0.5s;
 }
 
-/* Player */
 #player {
   position: absolute;
   bottom: 20px;
@@ -78,125 +69,49 @@ body {
   width: 100px;
   height: 100px;
   background: url('download-removebg-preview.png') no-repeat center/contain;
-  z-index: 5;
 }
 
-/* Enemies */
 .enemy {
   position: absolute;
-  top: -60px;
+  top: -50px;
   width: 60px;
   height: 60px;
-  background: url('download__1_-removebg-preview.png') no-repeat center/contain;
+  background: url('download__1_-removebg-preview.png') no-repeat center/contain; /* Updated URL */
   animation: fall linear;
-  z-index: 2;
+ 
 }
 
 @keyframes fall {
   0% {
-    top: -60px;
+    top: -50px;
   }
   100% {
     top: 100%;
   }
 }
 
-/* Enemy Explosion Effect */
-.explosion {
+.power-up {
   position: absolute;
   width: 40px;
   height: 40px;
-  background: radial-gradient(circle, red, yellow);
+  background: gold;
   border-radius: 50%;
-  animation: explosionEffect 0.5s ease-in-out forwards;
-  z-index: 10;
+  animation: fall linear;
 }
 
-@keyframes explosionEffect {
-  0% {
-    transform: scale(0);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.5);
-    opacity: 0.5;
-  }
-  100% {
-    transform: scale(0);
-    opacity: 0;
-  }
-}
-
-/* Bullets */
 .bullet {
   position: absolute;
   width: 8px;
   height: 20px;
   background: limegreen;
   border-radius: 5px;
-  z-index: 3;
-}
-.enemy-bullet {
-  position: absolute;
-  width: 8px;
-  height: 20px;
-  background: red;
-  border-radius: 5px;
-  z-index: 2;
 }
 
-.bullet {
-  position: absolute;
-  width: 8px;
-  height: 20px;
-  background: yellow;
-  border-radius: 5px;
-  z-index: 1;
-}
-
-@keyframes bulletMove {
-  0% {
-    top: 100%;
-  }
-  100% {
-    top: 0%;
-  }
-}
-
-
-
-/* Scoreboard */
 #score-board {
   position: absolute;
   top: 10px;
   left: 10px;
   color: white;
-  font-size: 24px;
-  font-weight: bold;
-  z-index: 10;
-}
-
-.game-ui {
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
   font-size: 20px;
-  z-index: 10;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  padding: 0 10px;
-  box-sizing: border-box;
-}
-
-/* Animations */
-@keyframes bulletMove {
-  0% {
-    top: 100%;
-  }
-  100% {
-    top: 0%;
-  }
-}
+  font-weight: bold;
+}  
